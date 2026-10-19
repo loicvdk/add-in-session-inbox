@@ -65,6 +65,8 @@ rows show `unknown`:
 2. `./scripts/package.sh` → `dist/add-in-session-inbox-<version>.zip` (only the files the extension needs).
 3. Upload the zip in the Chrome Web Store Developer Dashboard and attach it to a GitHub release.
 
+Store listing text, form answers and images: [`store/listing.md`](store/listing.md).
+
 ## Status of v1
 
 - [x] Add-in iframe origin (`https://pivot.claude.ai`) → `manifest.json` (`content_scripts`)
