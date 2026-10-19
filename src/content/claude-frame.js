@@ -16,7 +16,7 @@ function lastExcerpt() {
 
 function needsInput() {
   return S.needsInput.some(({ selector, text }) =>
-    [...document.querySelectorAll(selector)].some((e) => e.textContent.includes(text))
+    [...document.querySelectorAll(selector)].some((e) => !text || e.textContent.includes(text))
   );
 }
 

@@ -18,9 +18,17 @@ self.CLAUDE_SELECTORS = {
   thinking: ['[data-testid="stop-button"]'],
 
   // Claude is blocked waiting for the user (checked before `thinking`: the Stop
-  // button stays visible meanwhile). role="dialog" is also used by popovers,
-  // so each entry also needs its text.
-  needsInput: [{ selector: '[role="dialog"]', text: 'Permission required' }],
+  // button stays visible meanwhile). `text` is optional; when given, the match
+  // must also contain it.
+  needsInput: [
+    // "Permission required" card. role="dialog" is also used by popovers, hence the text.
+    { selector: '[role="dialog"]', text: 'Permission required' },
+    // "Ask User Question" bottom sheet (checked 2026-10-19): numbered option
+    // buttons plus a free-text <input>. No role or test id; option labels are
+    // written by Claude, so match on structure. The chat box is not fixed and
+    // has no <input>.
+    { selector: 'div.fixed.bottom-0:has(button):has(input)' },
+  ],
 
   // All assistant message containers; the last one gives the excerpt.
   assistantMessage: 'article[data-testid="assistant-message"]',

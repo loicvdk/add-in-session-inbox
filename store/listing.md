@@ -21,7 +21,7 @@ Copy-paste material for the Developer Dashboard. Images are in this folder; rege
 > Running the Claude add-in in several PowerPoint decks and Outlook at once? Add-in Session Inbox keeps a
 > side panel open next to all your tabs and shows the state of every session:
 >
-> • Needs input – Claude is waiting for your permission to continue
+> • Needs input – Claude is waiting for your permission or your answer to a question
 > • Done – to check – Claude finished; the first lines of its reply are shown
 > • Working – Claude is still busy, so you can carry on elsewhere
 > • Idle – the add-in is open, nothing is running

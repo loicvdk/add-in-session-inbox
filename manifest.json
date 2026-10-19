@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Add-in Session Inbox",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Side panel showing which Claude add-in sessions in PowerPoint and Outlook for the web are working, need input or are done.",
   "permissions": ["sidePanel", "storage", "tabs", "notifications"],
   "background": {

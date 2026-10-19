@@ -19,7 +19,7 @@ every session and tells you which one needs you.
 
 | Status | Meaning | What to do |
 |---|---|---|
-| **Needs input** | Claude is waiting for your permission (e.g. to edit a slide) | Click the row and answer in the add-in |
+| **Needs input** | Claude is waiting for you: a permission request (e.g. to edit a slide) or a question with options | Click the row and answer in the add-in |
 | **Done – to check** | Claude finished. The first lines of its reply are shown | Click the row to review, then ✓ |
 | **Working** | Claude is still busy | Carry on elsewhere, you'll be notified |
 | **Idle** | The add-in is open, nothing is running | – |

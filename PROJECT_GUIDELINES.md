@@ -28,7 +28,7 @@ This document is the spec. Decisions marked **(decided)** came out of a design i
 
 ### Out of v1 (later)
 - Desktop PowerPoint, desktop Outlook, Claude desktop app, Claude Code sessions. Possible v2: a small connector or hook bridge feeding the same panel.
-- "Needs input" for free-text questions (Claude asking something in its reply looks like "finished"). Permission prompts are covered in v1, see §4.
+- "Needs input" for questions asked in plain reply text (looks like "finished"). Permission prompts and "Ask User Question" cards are covered in v1, see §4.
 - Jumping to or highlighting the specific slides that changed.
 - Multiple users or syncing between devices.
 
@@ -38,13 +38,13 @@ This document is the spec. Decisions marked **(decided)** came out of a design i
 |---|---|---|
 | `idle` | Tracked, Claude has not run since tracking started | Not thinking, and never seen thinking |
 | `working` | Claude is thinking or generating | "Thinking" indicator visible (e.g. Stop button or streaming indicator) |
-| `needs input` | Claude is blocked on the user | A "Permission required" prompt is showing (the Stop button stays visible meanwhile) |
+| `needs input` | Claude is blocked on the user | A "Permission required" prompt or an "Ask User Question" card (options + free text) is showing; the Stop button stays visible meanwhile |
 | `done – to check` | Claude was working and stopped | Changed from `working` to not thinking |
 | `reviewed` | User has checked the result | User clicks ✓ on the row. Simply opening the tab does **not** mark it reviewed |
 | `unknown` | Detection failed | Claude add-in iframe or selectors not found |
 
 - No `stalled` status: a long run is just `working`.
-- `needs input` added 2026-10-18 at the user's request (decided): permission prompts only. It counts in the badge, sends a notification, and goes back to `working` once answered, or to `done – to check` if the run ends.
+- `needs input` added 2026-10-18 at the user's request (decided): permission prompts, plus "Ask User Question" cards since 2026-10-19. It counts in the badge, sends a notification, and goes back to `working` once answered, or to `done – to check` if the run ends.
 - Reviewed rows fold into a collapsed section and are deleted after **7 days**.
 - When Claude starts working again on a `done` or `reviewed` row, it goes back to `working`.
 
