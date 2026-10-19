@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy policy – Add-in Session Inbox</title>
+  <style>
+    body { max-width: 680px; margin: 40px auto; padding: 0 16px; font: 16px/1.6 system-ui, sans-serif; color: #141413; background: #faf9f5; }
+    h1 { font-family: Georgia, serif; }
+    @media (prefers-color-scheme: dark) { body { color: #f0eee6; background: #1f1e1d; } }
+  </style>
+</head>
+<body>
+  <h1>Privacy policy</h1>
+  <p><strong>Add-in Session Inbox</strong> (Chrome extension) · Last updated 19 October 2026</p>
+
+  <h2>What the extension reads</h2>
+  <ul>
+    <li>In the Claude add-in panel inside PowerPoint and Outlook for the web (<code>pivot.claude.ai</code>): whether
+      Claude is working, waiting for permission, or done, and the first ~200 characters of Claude's last reply.</li>
+    <li>On PowerPoint for the web pages (<code>*.sharepoint.com</code>): the deck's file address, used only for the
+      "Open in desktop app" button.</li>
+    <li>Tab titles and addresses (via the <code>tabs</code> permission), to list and switch to your sessions.</li>
+  </ul>
+
+  <h2>Where it goes</h2>
+  <p>Nowhere. Everything is stored in your own browser (<code>chrome.storage.local</code>) and stays on your device.
+    The extension makes no network requests, has no server, no analytics and no tracking, and shares nothing
+    with the developer or any third party. Rows you mark as reviewed are deleted after 7 days; removing a row or
+    uninstalling the extension deletes its data.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>sidePanel</code>: show the session list.</li>
+    <li><code>tabs</code>: find, focus and reopen the tabs of your sessions.</li>
+    <li><code>storage</code>: keep the list on your device.</li>
+    <li><code>notifications</code>: tell you when a session is done or needs input.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Questions: open an issue at
+    <a href="https://github.com/loicvdk/add-in-session-inbox/issues">github.com/loicvdk/add-in-session-inbox</a>.</p>
+
+  <p><small>Not affiliated with or endorsed by Anthropic or Microsoft.</small></p>
+</body>
+</html>

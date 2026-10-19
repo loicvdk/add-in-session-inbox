@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Add-in Session Inbox</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span id="logo" class="logo"></span>
+      <div>
+        <h1>Session Inbox</h1>
+        <div id="summary" class="summary"></div>
+      </div>
+    </div>
+    <button id="add-toggle" class="add" title="Add session">+ Add</button>
+  </header>
+  <form id="add-form" hidden>
+    <input id="add-url" type="url" placeholder="Paste a link…" required>
+    <button type="submit" class="add">Open</button>
+  </form>
+  <main id="list"></main>
+  <div id="empty" class="empty" hidden>
+    <span id="empty-logo" class="logo"></span>
+    <p>No sessions yet.<br>Open a PowerPoint deck with the Claude add-in, or add a link.</p>
+  </div>
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
