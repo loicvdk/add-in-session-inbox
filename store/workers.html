@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Workers strip 1000×230</title>
+  <link rel="stylesheet" href="../sidepanel/panel.css">
+  <style>
+    html, body { margin: 0; width: 1000px; height: 230px; overflow: hidden; background: var(--bg); }
+    body { display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 0 24px; box-sizing: border-box; }
+    .strip { display: flex; gap: 12px; }
+    .strip .row { flex: 1; flex-direction: column; align-items: center; gap: 6px; margin: 0; padding: 12px 6px; cursor: default; }
+    .strip .status-icon.has-worker { width: 64px; height: 64px; margin: 0; }
+    .strip .pill { font-size: 12px; }
+    .cap { font: 13px system-ui, sans-serif; color: var(--muted); text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="strip" id="strip"></div>
+  <div class="cap">Every session gets its own worker: grey when idle, yellow and busy while working, green when done.</div>
+  <script type="module">
+    import { worker } from '../sidepanel/workers.js';
+    const found = {};
+    for (let i = 0; Object.keys(found).length < 6 && i < 5000; i++) {
+      const role = worker('k' + i).getAttribute('class').split('worker-')[1];
+      found[role] ??= 'k' + i;
+    }
+    const states = ['idle', 'working', 'working', 'working', 'done', 'done'];
+    const labels = { idle: 'Idle', working: 'Working', done: 'To check' };
+    Object.values(found).forEach((key, i) => {
+      const st = states[i];
+      const row = document.createElement('div'); row.className = `row status-${st}`;
+      const icon = document.createElement('span'); icon.className = 'status-icon has-worker';
+      icon.append(worker(key));
+      const pill = document.createElement('span'); pill.className = 'pill'; pill.textContent = labels[st];
+      row.append(icon, pill);
+      document.getElementById('strip').append(row);
+    });
+  </script>
+</body>
+</html>

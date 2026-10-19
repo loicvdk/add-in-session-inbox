@@ -108,4 +108,7 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"   # Window
 kill %1
 ```
 
+For the README's workers strip, render `store/workers.html` the same way at `--window-size=1000,230
+--force-device-scale-factor=2` into `store/workers.png`.
+
 The screenshot uses the real side panel code with demo rows from `store/demo-data.js`.
